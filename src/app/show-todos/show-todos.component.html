@@ -1,0 +1,8 @@
+<div class="show-todos">
+  <div class="todo-item" *ngFor='let task of data'>
+    <h1>{{task.text}}</h1>
+    <p>ID: {{task.id}}</p>
+    <div>Completado: {{task.completed}}</div>
+    <div>{{task.createdAt}}</div>
+  </div>
+</div>

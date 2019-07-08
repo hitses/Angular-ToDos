@@ -1,0 +1,11 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <h1 class="text-center text-primary">Lista de tareas</h1>
+      <div class="input-group-prepend">
+        <input [(ngModel)]="addNewTodo" type="text" class="form-control" placeholder="Añadir tarea" name="todo">
+        <button class="input-group-text" (click)="newTask()">Añadir</button>
+      </div>
+    </div>
+  </form>
+</div>
