@@ -1,2 +1,6 @@
 <app-add-todo (newTodo)="addNewTodo($event)"></app-add-todo>
-<app-show-todos [data]='todos'></app-show-todos>
+<app-show-todos
+  [data]='todos'
+  (deleteTodo)="removeTodo($event)"
+  (completeTodo)="toggleCompleted($event)">
+</app-show-todos>

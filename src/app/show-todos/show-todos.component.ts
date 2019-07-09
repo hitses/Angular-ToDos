@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../../models/todo';
 
 @Component({
@@ -6,20 +6,19 @@ import { Todo } from '../../models/todo';
   templateUrl: './show-todos.component.html',
   styleUrls: ['./show-todos.component.scss']
 })
-export class ShowTodosComponent implements OnInit {
+export class ShowTodosComponent {
   @Input() data: Todo[];
+  @Output() deleteTodo = new EventEmitter<number>();
+  @Output() completeTodo = new EventEmitter<number>();
+
+  emitDeleteId(id) {
+    this.deleteTodo.emit(id);
+  }
+
+  emitCompleteId(id) {
+    this.completeTodo.emit(id);
+  }
 
   constructor() { }
-
-  ngOnInit() {
-    let newTodo: Todo = {
-      id: Math.random() * 9999999,
-      text: 'Primera tarea',
-      completed: false,
-      createdAt: new Date(),
-    };
-
-    this.data.push(newTodo);
-  }
 
 }
