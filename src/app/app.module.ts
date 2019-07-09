@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { ShowTodosComponent } from './show-todos/show-todos.component';
+import { FormatDatePipe } from './format-date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
     AddTodoComponent,
-    ShowTodosComponent
+    ShowTodosComponent,
+    FormatDatePipe
   ],
   imports: [
     BrowserModule,
