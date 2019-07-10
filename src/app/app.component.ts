@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Todo } from '../models/todo';
+import { LoggerService } from './services/logger.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { Todo } from '../models/todo';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private logger: LoggerService) {}
+
   todos: Todo[] = JSON.parse(localStorage.getItem('todos')) || [];
 
   addNewTodo(text) {
@@ -19,6 +22,7 @@ export class AppComponent {
     };
 
     this.todos.push(newTodo);
+    this.logger.log('new todo added', newTodo);
     this.saveToLocalStorage();
   }
 

@@ -9,6 +9,7 @@ import { ShowTodosComponent } from './show-todos/show-todos.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { FormatDatePipe } from './format-date.pipe';
 import { ColorPikerComponent } from './color-piker/color-piker.component';
+import { LoggerService } from './services/logger.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ColorPikerComponent } from './color-piker/color-piker.component';
     FormsModule,
     ColorPickerModule,
   ],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
