@@ -10,6 +10,7 @@ export class ShowTodosComponent {
   @Input() data: Todo[];
   @Output() deleteTodo = new EventEmitter<number>();
   @Output() completeTodo = new EventEmitter<number>();
+  @Output() changeColor = new EventEmitter<object>();
 
   emitDeleteId(id) {
     this.deleteTodo.emit(id);
@@ -17,6 +18,10 @@ export class ShowTodosComponent {
 
   emitCompleteId(id) {
     this.completeTodo.emit(id);
+  }
+
+  changeColorItem(color, id) {
+    this.changeColor.emit( {color:color, id:id});
   }
 
   constructor() { }

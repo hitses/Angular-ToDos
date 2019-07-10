@@ -2,5 +2,6 @@
 <app-show-todos
   [data]='todos'
   (deleteTodo)="removeTodo($event)"
-  (completeTodo)="toggleCompleted($event)">
-</app-show-todos>
+  (completeTodo)="toggleCompleted($event)"
+  (changeColor)="changeColor($event)"
+></app-show-todos>

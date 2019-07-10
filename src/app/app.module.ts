@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { ShowTodosComponent } from './show-todos/show-todos.component';
+import { ColorPickerModule } from 'ngx-color-picker';
 import { FormatDatePipe } from './format-date.pipe';
+import { ColorPikerComponent } from './color-piker/color-piker.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { FormatDatePipe } from './format-date.pipe';
     CounterComponent,
     AddTodoComponent,
     ShowTodosComponent,
-    FormatDatePipe
+    FormatDatePipe,
+    ColorPikerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ColorPickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

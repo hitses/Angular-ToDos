@@ -15,6 +15,7 @@ export class AppComponent {
       text,
       completed: false,
       createdAt: new Date(),
+      color: 'white',
     };
 
     this.todos.push(newTodo);
@@ -34,6 +35,16 @@ export class AppComponent {
     this.todos = this.todos.map( todo => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
+      }
+      return todo;
+    });
+    this.saveToLocalStorage();
+  }
+
+  changeColor(ev: {id: number, color: string}) {
+    this.todos = this.todos.map( todo => {
+      if (todo.id === ev.id) {
+        todo.color = ev.color;
       }
       return todo;
     });

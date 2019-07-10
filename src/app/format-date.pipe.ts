@@ -8,11 +8,34 @@ export class FormatDatePipe implements PipeTransform {
   transform(value: string, ...args: any[]): any {
     const date = new Date(value);
     const months = [
-      'enero', 'febrero', 'marzo', 'abril', 'mayo', 'abril', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+      'enero',
+      'febrero',
+      'marzo',
+      'abril',
+      'mayo',
+      'abril',
+      'junio',
+      'julio',
+      'agosto',
+      'septiembre',
+      'octubre',
+      'noviembre',
+      'diciembre'
+    ];
     const days = [
-      'Lunes', 'Martes', 'Miércoles', 'Viernes', 'Sábado', 'Domingo'];
+      'Lunes',
+      'Martes',
+      'Miércoles',
+      'Jueves',
+      'Viernes',
+      'Sábado',
+      'Domingo'
+    ];
 
-    return `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} de ${date.getFullYear()}`;
+    return `${days[date.getDay() - 1]},
+    ${date.getDate()}
+    ${months[date.getMonth()]}
+    de ${date.getFullYear()}`;
   }
 
 }
